@@ -1,29 +1,17 @@
 import "./Desktop.css";
+
 import TopBar from "../TopBar/TopBar";
-import Window from "../Window/Window";
+import MissionLog from "../../apps/MissionLog/MissionLog";
 
 export default function Desktop() {
   return (
     <div className="desktop">
       <TopBar />
 
-      <Window title="Observation Log">
-        <h2>Operator: Harsh</h2>
+      <MissionLog />
 
-        <p>Current Objective</p>
-
-        <ul>
-          <li>Build weird things</li>
-          <li>Learn Japanese</li>
-          <li>Talk to satellites</li>
-          <li>Finish OrionOS</li>
-        </ul>
-
-        <button>Begin Session</button>
-      </Window>
-
-      <div className="grain" />
-      <div className="vignette" />
+      <div className="grain"></div>
+      <div className="vignette"></div>
     </div>
   );
 }
