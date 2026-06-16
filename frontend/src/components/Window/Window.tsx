@@ -1,25 +1,27 @@
 import "./Window.css";
-import type { ReactNode } from "react";
 
 interface WindowProps {
   title: string;
-  children: ReactNode;
+  children: React.ReactNode;
+  onClose?: () => void;
 }
 
-export default function Window({ title, children }: WindowProps) {
+export default function Window({
+  title,
+  children,
+  onClose,
+}: WindowProps) {
   return (
     <div className="window">
       <div className="window-header">
-        <div className="window-title">
-          📎 <span>{title}</span>
-        </div>
+        <div>{title}</div>
 
-        <div className="window-controls">
-          <button>×</button>
-        </div>
+        <button onClick={onClose}>×</button>
       </div>
 
-      <div className="window-content">{children}</div>
+      <div className="window-content">
+        {children}
+      </div>
     </div>
   );
 }
